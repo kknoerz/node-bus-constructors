@@ -57,7 +57,7 @@ var getNewStudent = function(){
   }
 
   if(main.studentsOnTheBus.length>0){
-    console.log('Students Currently on the bus:');
+    console.log('Students currently on the bus:');
     for(j=0;j<main.studentsOnTheBus.length;j++){
       console.log(main.studentsOnTheBus[j].name);
     }
