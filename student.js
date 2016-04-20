@@ -14,9 +14,9 @@ var Student = function(name, gender, grade, GPA, detentions, sleepingInClass, ca
 
   var canStudentHaveFun = function(detentions, GPA){
       if(thisStudent.detentions<10 && thisStudent.GPA >= 2){
-        console.log(this.name+" can have fun!");
+        console.log(thisStudent.name+" can have fun!");
       }else{
-        console.log(this.name+' may not have fun! Detentions: '+thisStudent.detentions+', GPA: '+thisStudent.GPA)
+        console.log(thisStudent.name+' may not have fun! Detentions: '+thisStudent.detentions+', GPA: '+thisStudent.GPA)
       }
   }
   canStudentHaveFun();
