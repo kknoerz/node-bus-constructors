@@ -49,29 +49,34 @@ var schema = {
   }
 };
 
-
+//***************************** DECLARE MAIN FUNCTION **************************
 var getNewStudent = function(){
   prompt.start();
   if(main.studentsOnTheBus.length == 0){
     console.log('You are the first student!');
   }
-
+//***************************** SNAPSHOT OF STUDENTS ***************************
   if(main.studentsOnTheBus.length>0){
     console.log('Students currently on the bus:');
     for(j=0;j<main.studentsOnTheBus.length;j++){
       console.log(main.studentsOnTheBus[j].name);
     }
+    console.log('*************************************************************')
   }
+//************************** START PROMPTING FUNCTION **************************
   prompt.get(schema, function (err, result) {
     if (err){
       console.log(err)
     }
+//*************************** PUSH NEWSTUDENT TO BUS ***************************
     main.studentEntersBus(result.name, result.gender, result.grade, result.GPA, result.detentions, result.sleepingInClass, result.catchPhrase);
-    console.log('You have: '+main.studentsOnTheBus.length+' students on the bus. The bus is full after 20 students.');
+    console.log('You have: '+main.studentsOnTheBus.length+' students on the bus.')
+    +('The bus is full after 20 students.');
     console.log('The kids and their lingo: ');
     for (i=0;i<main.studentsOnTheBus.length;i++){
       console.log(main.studentsOnTheBus[i].catchPhrase);
     }
+    console.log('*************************************************************')
     if(main.studentsOnTheBus.length>1){
       if (result.tattle){
         console.log('Students before tattle: ');
